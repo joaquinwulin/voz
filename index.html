@@ -144,7 +144,7 @@
     .progress-track {
       position: relative;
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
       gap: 2px;
     }
 
@@ -152,10 +152,10 @@
       content: '';
       position: absolute;
       top: 36px;
-      left: 16.67%;
-      right: 16.67%;
+      left: 12.5%;
+      right: 12.5%;
       height: 1px;
-      background: linear-gradient(90deg, var(--accent1), var(--accent2), var(--accent3));
+      background: linear-gradient(90deg, var(--accent1), var(--accent2), var(--accent3), var(--accent4));
       z-index: 0;
     }
 
@@ -197,6 +197,11 @@
       background: linear-gradient(135deg, rgba(251,146,60,0.15), rgba(251,146,60,0.05));
       border-color: rgba(251,146,60,0.4);
       color: var(--accent3);
+    }
+    .prog-circle.iv {
+      background: linear-gradient(135deg, rgba(52,211,153,0.15), rgba(52,211,153,0.05));
+      border-color: rgba(52,211,153,0.4);
+      color: var(--accent4);
     }
 
     .prog-date {
@@ -249,6 +254,7 @@
     .session-roman.i { color: var(--accent1); }
     .session-roman.ii { color: var(--accent2); }
     .session-roman.iii { color: var(--accent3); }
+    .session-roman.iv { color: var(--accent4); }
 
     .session-meta h2 {
       font-family: 'Playfair Display', serif;
@@ -478,6 +484,7 @@
     .bar-fill.v3 { width: 70%; background: linear-gradient(90deg, var(--accent3), var(--accent4)); animation-delay: 0.3s; }
     .bar-fill.v4 { width: 55%; background: linear-gradient(90deg, var(--accent4), var(--accent1)); animation-delay: 0.4s; }
     .bar-fill.v5 { width: 75%; background: linear-gradient(90deg, var(--accent1), var(--accent3)); animation-delay: 0.5s; }
+    .bar-fill.v6 { width: 60%; background: linear-gradient(90deg, var(--accent4), var(--accent2)); animation-delay: 0.6s; }
 
     .chart-legend {
       display: flex;
@@ -503,6 +510,7 @@
     .legend-session.i { color: var(--accent1); }
     .legend-session.ii { color: var(--accent2); }
     .legend-session.iii { color: var(--accent3); }
+    .legend-session.iv { color: var(--accent4); }
 
     .legend-focus {
       font-size: 14px;
@@ -562,6 +570,7 @@
     <div class="pill active">Teatro I · Cuerpo & Voz</div>
     <div class="pill active">Teatro II · 7 Mar 2026</div>
     <div class="pill active">Teatro III · 21 Mar 2026</div>
+    <div class="pill active">Teatro IV · 11 Abr 2026</div>
   </div>
   <div class="scroll-hint">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
@@ -572,7 +581,7 @@
 <!-- PROGRESS ARC -->
 <section class="arc-section">
   <p class="section-label">Tu arco de progresión</p>
-  <h2 class="section-title">Tres sesiones,<br>una transformación.</h2>
+  <h2 class="section-title">Cuatro sesiones,<br>una transformación.</h2>
 
   <div class="progress-track">
     <div class="prog-node">
@@ -592,6 +601,12 @@
       <p class="prog-date">21 Mar 2026</p>
       <p class="prog-theme">Tempo & Proyección</p>
       <p class="prog-desc">Maestría del ritmo, músculo masetero y presencia</p>
+    </div>
+    <div class="prog-node">
+      <div class="prog-circle iv">IV</div>
+      <p class="prog-date">11 Abr 2026</p>
+      <p class="prog-theme">Diafragma & Cuerdas</p>
+      <p class="prog-desc">Respiración diafragmática, proyección y cuerdas vocales</p>
     </div>
   </div>
 </section>
@@ -832,13 +847,88 @@
     </div>
   </div>
 
+  <!-- SESSION IV -->
+  <div class="session-block">
+    <div class="session-header">
+      <div class="session-roman iv">IV</div>
+      <div class="session-meta">
+        <h2>Teatro IV — Diafragma & Cuerdas</h2>
+        <p>11 de Abril, 2026 · Respiración diafragmática, proyección y cuerdas vocales</p>
+      </div>
+    </div>
+
+    <div class="cards-grid">
+
+      <div class="card green">
+        <span class="card-icon">🫁</span>
+        <div class="card-title">Respiración Diafragmática</div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Técnica fundamental</strong> más importante del entrenamiento</li>
+            <li>Posición: manos en cadera/ombligo, <strong>postura Superman</strong></li>
+            <li>Apretar oblicuos (músculos encima de la cadera)</li>
+            <li>Sonido <strong>"ts" largo</strong> para entrenar el diafragma — está "dormido" por falta de uso</li>
+            <li>Poner fricción/mano en ombligo para notar que se ejercita</li>
+            <li>Respirar por la boca durante habla pública — permite <strong>coger más aire</strong> y activa mejor el diafragma</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card green">
+        <span class="card-icon">📢</span>
+        <div class="card-title">Proyección de Voz</div>
+        <div class="card-body">
+          <ul>
+            <li>Visualizar <strong>letras gigantes</strong> proyectándose hacia punto lejano</li>
+            <li>Concepto: <strong>"lanzar" la voz</strong> como si escribieras al 100%</li>
+            <li>Hablar desde el diafragma, <strong>no desde el pecho</strong></li>
+            <li>Práctica con frase: <em>"café con leche y tostada mantequilla"</em></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card purple">
+        <span class="card-icon">🎵</span>
+        <div class="card-title">Ejercicios para Cuerdas Vocales</div>
+        <div class="card-body">
+          <ul>
+            <li>Masaje en <strong>músculo triangular</strong> entre clavícula y sobaco</li>
+            <li>Usar puño (parte pulgar-índice, no nudillos)</li>
+            <li>Hacer sonido <strong>"HA"</strong> mientras se masajea — cuerdas vocales se contraen y descontraen</li>
+            <li>Mejor momento: <strong>en la ducha</strong></li>
+            <li>Frecuencia: <strong>diario, después de cenar</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card orange">
+        <span class="card-icon">🗣️</span>
+        <div class="card-title">Ejercicios Adicionales</div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Trabalenguas con consonante J</strong>: leer primero todo con J, después normal</li>
+            <li>Fortalece vocalización desde el diafragma</li>
+            <li>Ejercicio mandíbula: <strong>desencajar y relajar</strong></li>
+            <li>Masticar como caballo para <strong>reducir tensión</strong></li>
+            <li>Enfoque: respirar más <strong>profundo (abajo)</strong> vs. superficial (arriba)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="highlight-card">
+        💡 <strong>Gran insight de Teatro IV:</strong> "El diafragma es el motor de todo — como un músculo dormido que necesita calentamiento diario. Respirar por la boca, visualizar letras gigantes y masajear las cuerdas vocales son las herramientas que conectan la técnica con la potencia real."
+      </div>
+
+    </div>
+  </div>
+
 </section>
 
 <!-- KEY INSIGHTS -->
 <section class="insights-section">
   <div class="insights-inner">
     <p class="section-label">Lo que más importa</p>
-    <h2 class="section-title">6 Aprendizajes Clave</h2>
+    <h2 class="section-title">8 Aprendizajes Clave</h2>
 
     <div class="insights-grid">
 
@@ -882,6 +972,20 @@
         <span class="insight-emoji">💪</span>
         <div class="insight-title">Entrena el músculo</div>
         <div class="insight-text">La voz es atletismo. El ejercicio del lápiz (masetero), la gesticulación exagerada y los calentamientos desde Teatro I construyen resistencia que se transfiere directo a la ejecución.</div>
+      </div>
+
+      <div class="insight-item">
+        <span class="insight-number">7</span>
+        <span class="insight-emoji">🫁</span>
+        <div class="insight-title">Despierta el diafragma</div>
+        <div class="insight-text">El diafragma está dormido por falta de uso — como un músculo que nunca entrenas. El sonido "ts" largo, la postura Superman y respirar por la boca lo activan como motor central de tu voz.</div>
+      </div>
+
+      <div class="insight-item">
+        <span class="insight-number">8</span>
+        <span class="insight-emoji">🎵</span>
+        <div class="insight-title">Cuerdas vocales: rutina diaria</div>
+        <div class="insight-text">El masaje del músculo triangular (clavícula-sobaco) con sonido "HA" contrae y descontrae las cuerdas vocales. En la ducha, después de cenar — la constancia construye el instrumento.</div>
       </div>
 
     </div>
@@ -936,6 +1040,14 @@
         <div class="bar-track"><div class="bar-fill v5"></div></div>
       </div>
 
+      <div class="skill-row">
+        <div class="skill-label">
+          <span class="skill-name">Respiración Diafragmática</span>
+          <span class="skill-pct">60%</span>
+        </div>
+        <div class="bar-track"><div class="bar-fill v6"></div></div>
+      </div>
+
     </div>
 
     <div class="chart-legend">
@@ -954,12 +1066,17 @@
         <div class="legend-focus">Ejecución con confianza</div>
         <div class="legend-note">Tempo variable, músculo masetero, proyección avanzada y silencios conscientes</div>
       </div>
+      <div class="legend-item">
+        <div class="legend-session iv">Teatro IV · 11 Abr</div>
+        <div class="legend-focus">Diafragma & cuerdas vocales</div>
+        <div class="legend-note">Respiración diafragmática, proyección desde el diafragma, masaje de cuerdas vocales y trabalenguas</div>
+      </div>
     </div>
   </div>
 </section>
 
 <footer>
-  Generado desde tus notas de Granola · <span>Teatro I, II & III</span> · Joaquin Wu Lin
+  Generado desde tus notas de Granola · <span>Teatro I, II, III & IV</span> · Joaquin Wu Lin
 </footer>
 
 <script>
