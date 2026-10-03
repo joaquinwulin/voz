@@ -15,6 +15,7 @@
       --accent2: #f472b6;
       --accent3: #fb923c;
       --accent4: #34d399;
+      --accent5: #60a5fa;
       --text: #e8e8f0;
       --muted: #7878a0;
       --border: rgba(255,255,255,0.07);
@@ -144,7 +145,7 @@
     .progress-track {
       position: relative;
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: repeat(5, 1fr);
       gap: 2px;
     }
 
@@ -152,10 +153,10 @@
       content: '';
       position: absolute;
       top: 36px;
-      left: 12.5%;
-      right: 12.5%;
+      left: 10%;
+      right: 10%;
       height: 1px;
-      background: linear-gradient(90deg, var(--accent1), var(--accent2), var(--accent3), var(--accent4));
+      background: linear-gradient(90deg, var(--accent1), var(--accent2), var(--accent3), var(--accent4), var(--accent5));
       z-index: 0;
     }
 
@@ -202,6 +203,11 @@
       background: linear-gradient(135deg, rgba(52,211,153,0.15), rgba(52,211,153,0.05));
       border-color: rgba(52,211,153,0.4);
       color: var(--accent4);
+    }
+    .prog-circle.v {
+      background: linear-gradient(135deg, rgba(96,165,250,0.15), rgba(96,165,250,0.05));
+      border-color: rgba(96,165,250,0.4);
+      color: var(--accent5);
     }
 
     .prog-date {
@@ -255,6 +261,7 @@
     .session-roman.ii { color: var(--accent2); }
     .session-roman.iii { color: var(--accent3); }
     .session-roman.iv { color: var(--accent4); }
+    .session-roman.v { color: var(--accent5); }
 
     .session-meta h2 {
       font-family: 'Playfair Display', serif;
@@ -299,6 +306,7 @@
     .card.orange::before { background: linear-gradient(90deg, var(--accent3), transparent); }
     .card.purple::before { background: linear-gradient(90deg, var(--accent1), transparent); }
     .card.green::before { background: linear-gradient(90deg, var(--accent4), transparent); }
+    .card.blue::before { background: linear-gradient(90deg, var(--accent5), transparent); }
 
     .card-icon {
       font-size: 1.6rem;
@@ -511,6 +519,7 @@
     .legend-session.ii { color: var(--accent2); }
     .legend-session.iii { color: var(--accent3); }
     .legend-session.iv { color: var(--accent4); }
+    .legend-session.v { color: var(--accent5); }
 
     .legend-focus {
       font-size: 14px;
@@ -571,6 +580,7 @@
     <div class="pill active">Teatro II · 7 Mar 2026</div>
     <div class="pill active">Teatro III · 21 Mar 2026</div>
     <div class="pill active">Teatro IV · 11 Abr 2026</div>
+    <div class="pill active">Teatro V · 3 Oct 2026</div>
   </div>
   <div class="scroll-hint">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
@@ -581,7 +591,7 @@
 <!-- PROGRESS ARC -->
 <section class="arc-section">
   <p class="section-label">Tu arco de progresión</p>
-  <h2 class="section-title">Cuatro sesiones,<br>una transformación.</h2>
+  <h2 class="section-title">Cinco sesiones,<br>una transformación.</h2>
 
   <div class="progress-track">
     <div class="prog-node">
@@ -607,6 +617,12 @@
       <p class="prog-date">11 Abr 2026</p>
       <p class="prog-theme">Diafragma & Cuerdas</p>
       <p class="prog-desc">Respiración diafragmática, proyección y cuerdas vocales</p>
+    </div>
+    <div class="prog-node">
+      <div class="prog-circle v">V</div>
+      <p class="prog-date">3 Oct 2026</p>
+      <p class="prog-theme">Preparación & Proyección</p>
+      <p class="prog-desc">Ritual de 5 pasos antes de hablar en público</p>
     </div>
   </div>
 </section>
@@ -922,13 +938,124 @@
     </div>
   </div>
 
+  <!-- SESSION V -->
+  <div class="session-block">
+    <div class="session-header">
+      <div class="session-roman v">V</div>
+      <div class="session-meta">
+        <h2>Teatro V — Preparación & Proyección</h2>
+        <p>3 de Octubre, 2026 · Los 5 pasos antes de comunicar en público (grupos de 10+ personas)</p>
+      </div>
+    </div>
+
+    <div class="cards-grid">
+
+      <div class="card blue">
+        <span class="card-icon">🏗️</span>
+        <div class="card-title">1 · Relajación</div>
+        <div class="card-body">
+          <ul>
+            <li>Un cuerpo tenso <strong>impide que la onda sonora se propague</strong></li>
+            <li>Analogía: los <strong>edificios flexibles</strong> sobreviven a los terremotos, los rígidos no</li>
+            <li>Punto clave: relajar la <strong>mandíbula (zona de las patillas)</strong></li>
+            <li>Tensión en esa zona es síntoma de <strong>bruxismo</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card blue">
+        <span class="card-icon">⛽</span>
+        <div class="card-title">2 · Respiración</div>
+        <div class="card-body">
+          <ul>
+            <li>Respiración superficial = <strong>poca potencia</strong></li>
+            <li>El aire es la <strong>"gasolina"</strong> que proyecta el mensaje</li>
+            <li>Al hablar, respirar <strong>por la boca</strong>: más eficiente que por la nariz</li>
+            <li>Coger <strong>mini sorbitos de aire</strong> para mantener la proyección</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card green">
+        <span class="card-icon">🦸</span>
+        <div class="card-title">3 · Diafragma</div>
+        <div class="card-body">
+          <ul>
+            <li>El más importante: <strong>si solo haces uno, este</strong></li>
+            <li><strong>Pose de Superman</strong> para activarlo — si se hace bien, las manos se mueven</li>
+            <li>Ejercicios de <strong>"CH"</strong> y <strong>"TS"</strong> para despertarlo</li>
+            <li>Debe estar <strong>activo en cada momento</strong> al hablar</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card purple">
+        <span class="card-icon">🔔</span>
+        <div class="card-title">4 · Resonancia & Salivación</div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Rumiar</strong> como si saborearas algo, activando la salivación</li>
+            <li>Sonido <strong>"OM"</strong> para sentir el retumbe en la caja torácica</li>
+            <li>Lengua relajada: si <strong>tapa el orificio</strong>, el sonido pierde potencia</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card orange">
+        <span class="card-icon">👄</span>
+        <div class="card-title">5 · Articulación</div>
+        <div class="card-body">
+          <ul>
+            <li>Lengua sobre el labio inferior, labio superior detrás de los dientes — e <strong>intentar hablar vocalizando</strong></li>
+            <li>Estirar el <strong>frenillo superior e inferior</strong> para activar los labios</li>
+            <li>Soplar haciendo <strong>"BR"</strong> para que los labios estén sueltos y activos</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card pink">
+        <span class="card-icon">🪞</span>
+        <div class="card-title">Feedback Personal</div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Pérdida de potencia al final de las frases</strong> por falta de respiración intermedia</li>
+            <li><strong>Monotonía:</strong> modular el tono con más consciencia</li>
+            <li><strong>Pausas</strong> intencionales para enfatizar o dramatizar</li>
+            <li>Post-sesión: más <strong>juguetón, suelto</strong>, menos miedo a equivocarse</li>
+            <li>Cuerpo más calmado; potencia suficiente para <strong>llegar al fondo de la sala</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card blue">
+        <span class="card-icon">📅</span>
+        <div class="card-title">Cómo Integrarlo en el Día a Día</div>
+        <div class="card-body">
+          <ul>
+            <li>Hacer los <strong>5 pasos en orden</strong> antes de cualquier comunicación importante</li>
+            <li>Si solo hay tiempo para uno: <strong>activar el diafragma</strong></li>
+            <li>Tocar las <strong>patillas</strong> para detectar y liberar tensión mandibular</li>
+            <li>Revisar también donde el <strong>pectoral conecta con el hombro</strong> (otro foco de tensión)</li>
+            <li><strong>Respirar entre frases</strong> para mantener la potencia hasta el final</li>
+            <li>Proyectar siempre hacia <strong>la última persona de la sala</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="highlight-card">
+        💡 <strong>Gran insight de Teatro V:</strong> "Hablar bien empieza antes de abrir la boca. Relajación, respiración, diafragma, resonancia y articulación — un ritual de cinco pasos. Y si solo hay tiempo para uno: despierta el diafragma y respira entre frases para llegar con fuerza hasta la última fila."
+      </div>
+
+    </div>
+  </div>
+
 </section>
 
 <!-- KEY INSIGHTS -->
 <section class="insights-section">
   <div class="insights-inner">
     <p class="section-label">Lo que más importa</p>
-    <h2 class="section-title">8 Aprendizajes Clave</h2>
+    <h2 class="section-title">10 Aprendizajes Clave</h2>
 
     <div class="insights-grid">
 
@@ -986,6 +1113,20 @@
         <span class="insight-emoji">🎵</span>
         <div class="insight-title">Cuerdas vocales: rutina diaria</div>
         <div class="insight-text">El masaje del músculo triangular (clavícula-sobaco) con sonido "HA" contrae y descontrae las cuerdas vocales. En la ducha, después de cenar — la constancia construye el instrumento.</div>
+      </div>
+
+      <div class="insight-item">
+        <span class="insight-number">9</span>
+        <span class="insight-emoji">🪜</span>
+        <div class="insight-title">Ritual de 5 pasos</div>
+        <div class="insight-text">Antes de hablar a un grupo: relajación, respiración, diafragma, resonancia y articulación, en ese orden. Si solo hay tiempo para uno, activa el diafragma.</div>
+      </div>
+
+      <div class="insight-item">
+        <span class="insight-number">10</span>
+        <span class="insight-emoji">🎯</span>
+        <div class="insight-title">Respira hasta la última fila</div>
+        <div class="insight-text">La potencia se pierde al final de la frase cuando no hay aire. Mini sorbitos entre frases, tono modulado y la voz proyectada siempre hacia la última persona de la sala.</div>
       </div>
 
     </div>
@@ -1071,12 +1212,17 @@
         <div class="legend-focus">Diafragma & cuerdas vocales</div>
         <div class="legend-note">Respiración diafragmática, proyección desde el diafragma, masaje de cuerdas vocales y trabalenguas</div>
       </div>
+      <div class="legend-item">
+        <div class="legend-session v">Teatro V · 3 Oct</div>
+        <div class="legend-focus">Preparación antes de hablar</div>
+        <div class="legend-note">Ritual de 5 pasos: relajación, respiración, diafragma, resonancia y articulación; respirar entre frases y modular el tono</div>
+      </div>
     </div>
   </div>
 </section>
 
 <footer>
-  Generado desde tus notas de Granola · <span>Teatro I, II, III & IV</span> · Joaquin Wu Lin
+  Generado desde tus notas de Granola · <span>Teatro I, II, III, IV & V</span> · Joaquin Wu Lin
 </footer>
 
 <script>
