@@ -746,7 +746,7 @@
 
     .session-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 16px;
     }
 
@@ -896,3 +896,172 @@
       .session-pager { grid-template-columns: 1fr; }
       .pager-link.next { text-align: left; }
     }
+
+    /* ── MONTH TIMELINE ── */
+    .month-timeline {
+      margin: 0 0 40px;
+    }
+
+    .timeline-scroll {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      padding: 22px 0 4px;
+    }
+
+    .timeline-track {
+      position: relative;
+      min-width: 680px;
+    }
+
+    .tl-line {
+      position: absolute;
+      top: 20px;
+      left: 4.5%;
+      right: 4.5%;
+      height: 1px;
+      background: linear-gradient(90deg, var(--accent1), var(--accent2), var(--accent3), var(--accent4), var(--muted), var(--muted), var(--muted), var(--muted), var(--muted), var(--accent5), var(--accent6));
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .tl-span-gap {
+      position: absolute;
+      top: -6px;
+      left: 36.36%; /* start of May = 4/11 */
+      width: 45.45%; /* May–Sep = 5/11 */
+      text-align: center;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.8px;
+      color: var(--accent3);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .timeline-months {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(11, 1fr);
+      position: relative;
+      z-index: 1;
+    }
+
+    .tl-month {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 10px;
+    }
+
+    .tl-dot {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      border: 2px solid transparent;
+      box-sizing: border-box;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    a.tl-dot:hover,
+    a.tl-dot:focus-visible {
+      transform: scale(1.08);
+      outline: none;
+    }
+
+    .tl-dot.i {
+      background: linear-gradient(135deg, rgba(192,132,252,0.2), rgba(192,132,252,0.08));
+      border-color: rgba(192,132,252,0.55);
+      color: var(--accent1);
+    }
+    .tl-dot.ii {
+      background: linear-gradient(135deg, rgba(244,114,182,0.2), rgba(244,114,182,0.08));
+      border-color: rgba(244,114,182,0.55);
+      color: var(--accent2);
+    }
+    .tl-dot.iii {
+      background: linear-gradient(135deg, rgba(251,146,60,0.2), rgba(251,146,60,0.08));
+      border-color: rgba(251,146,60,0.55);
+      color: var(--accent3);
+    }
+    .tl-dot.iv {
+      background: linear-gradient(135deg, rgba(52,211,153,0.2), rgba(52,211,153,0.08));
+      border-color: rgba(52,211,153,0.55);
+      color: var(--accent4);
+    }
+    .tl-dot.v {
+      background: linear-gradient(135deg, rgba(96,165,250,0.2), rgba(96,165,250,0.08));
+      border-color: rgba(96,165,250,0.55);
+      color: var(--accent5);
+    }
+    .tl-dot.vi {
+      background: linear-gradient(135deg, rgba(251,191,36,0.2), rgba(251,191,36,0.08));
+      border-color: rgba(251,191,36,0.55);
+      color: var(--accent6);
+    }
+
+    .tl-dot.hollow {
+      width: 12px;
+      height: 12px;
+      margin: 12px 0;
+      border: 1.5px solid rgba(120,120,160,0.55);
+      background: transparent;
+    }
+
+    .tl-cluster {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+    }
+    .tl-cluster .tl-dot {
+      width: 30px;
+      height: 30px;
+      font-size: 11px;
+    }
+
+    .tl-name {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .tl-month.has-session .tl-name { color: var(--text); }
+
+    .timeline-intervals {
+      list-style: none;
+      margin: 18px 0 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px 12px;
+    }
+    .timeline-intervals li {
+      font-size: 12px;
+      color: var(--muted);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 5px 12px;
+    }
+    .timeline-intervals li strong { color: var(--text); font-weight: 600; }
+    .timeline-intervals li.is-long {
+      border-color: rgba(251,146,60,0.35);
+      color: var(--accent3);
+    }
+    .timeline-intervals li.is-long strong { color: var(--accent3); }
+
+    @media (max-width: 640px) {
+      .month-timeline { margin-bottom: 32px; }
+    }
+
