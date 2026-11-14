@@ -16,6 +16,7 @@
       --accent3: #fb923c;
       --accent4: #34d399;
       --accent5: #60a5fa;
+      --accent6: #fbbf24;
       --text: #e8e8f0;
       --muted: #7878a0;
       --border: rgba(255,255,255,0.07);
@@ -121,7 +122,7 @@
     /* ── PROGRESS ARC ── */
     .arc-section {
       padding: 100px 24px;
-      max-width: 900px;
+      max-width: 1100px;
       margin: 0 auto;
     }
 
@@ -145,7 +146,7 @@
     .progress-track {
       position: relative;
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(6, 1fr);
       gap: 2px;
     }
 
@@ -156,7 +157,7 @@
       left: 10%;
       right: 10%;
       height: 1px;
-      background: linear-gradient(90deg, var(--accent1), var(--accent2), var(--accent3), var(--accent4), var(--accent5));
+      background: linear-gradient(90deg, var(--accent1), var(--accent2), var(--accent3), var(--accent4), var(--accent5), var(--accent6));
       z-index: 0;
     }
 
@@ -208,6 +209,11 @@
       background: linear-gradient(135deg, rgba(96,165,250,0.15), rgba(96,165,250,0.05));
       border-color: rgba(96,165,250,0.4);
       color: var(--accent5);
+    }
+    .prog-circle.vi {
+      background: linear-gradient(135deg, rgba(251,191,36,0.15), rgba(251,191,36,0.05));
+      border-color: rgba(251,191,36,0.4);
+      color: var(--accent6);
     }
 
     .prog-date {
@@ -262,6 +268,7 @@
     .session-roman.iii { color: var(--accent3); }
     .session-roman.iv { color: var(--accent4); }
     .session-roman.v { color: var(--accent5); }
+    .session-roman.vi { color: var(--accent6); }
 
     .session-meta h2 {
       font-family: 'Playfair Display', serif;
@@ -307,6 +314,7 @@
     .card.purple::before { background: linear-gradient(90deg, var(--accent1), transparent); }
     .card.green::before { background: linear-gradient(90deg, var(--accent4), transparent); }
     .card.blue::before { background: linear-gradient(90deg, var(--accent5), transparent); }
+    .card.gold::before { background: linear-gradient(90deg, var(--accent6), transparent); }
 
     .card-icon {
       font-size: 1.6rem;
@@ -430,7 +438,7 @@
 
     /* ── PROGRESSION CHART ── */
     .chart-section {
-      max-width: 900px;
+      max-width: 1100px;
       margin: 0 auto;
       padding: 100px 24px;
     }
@@ -489,9 +497,9 @@
 
     .bar-fill.v1 { width: 65%; background: linear-gradient(90deg, var(--accent1), var(--accent2)); animation-delay: 0.1s; }
     .bar-fill.v2 { width: 80%; background: linear-gradient(90deg, var(--accent2), var(--accent3)); animation-delay: 0.2s; }
-    .bar-fill.v3 { width: 70%; background: linear-gradient(90deg, var(--accent3), var(--accent4)); animation-delay: 0.3s; }
+    .bar-fill.v3 { width: 80%; background: linear-gradient(90deg, var(--accent3), var(--accent4)); animation-delay: 0.3s; }
     .bar-fill.v4 { width: 55%; background: linear-gradient(90deg, var(--accent4), var(--accent1)); animation-delay: 0.4s; }
-    .bar-fill.v5 { width: 75%; background: linear-gradient(90deg, var(--accent1), var(--accent3)); animation-delay: 0.5s; }
+    .bar-fill.v5 { width: 85%; background: linear-gradient(90deg, var(--accent1), var(--accent3)); animation-delay: 0.5s; }
     .bar-fill.v6 { width: 60%; background: linear-gradient(90deg, var(--accent4), var(--accent2)); animation-delay: 0.6s; }
 
     .chart-legend {
@@ -520,6 +528,7 @@
     .legend-session.iii { color: var(--accent3); }
     .legend-session.iv { color: var(--accent4); }
     .legend-session.v { color: var(--accent5); }
+    .legend-session.vi { color: var(--accent6); }
 
     .legend-focus {
       font-size: 14px;
@@ -547,6 +556,11 @@
     }
 
     /* ── UTILS ── */
+    @media (max-width: 900px) {
+      .progress-track { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+      .progress-track::before { display: none; }
+    }
+
     @media (max-width: 640px) {
       .progress-track { grid-template-columns: 1fr; gap: 24px; }
       .progress-track::before { display: none; }
@@ -581,6 +595,7 @@
     <div class="pill active">Teatro III · 21 Mar 2026</div>
     <div class="pill active">Teatro IV · 11 Abr 2026</div>
     <div class="pill active">Teatro V · 3 Oct 2026</div>
+    <div class="pill active">Teatro VI · 14 Nov 2026</div>
   </div>
   <div class="scroll-hint">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
@@ -591,7 +606,7 @@
 <!-- PROGRESS ARC -->
 <section class="arc-section">
   <p class="section-label">Tu arco de progresión</p>
-  <h2 class="section-title">Cinco sesiones,<br>una transformación.</h2>
+  <h2 class="section-title">Seis sesiones,<br>una transformación.</h2>
 
   <div class="progress-track">
     <div class="prog-node">
@@ -623,6 +638,12 @@
       <p class="prog-date">3 Oct 2026</p>
       <p class="prog-theme">Preparación & Proyección</p>
       <p class="prog-desc">Ritual de 5 pasos antes de hablar en público</p>
+    </div>
+    <div class="prog-node">
+      <div class="prog-circle vi">VI</div>
+      <p class="prog-date">14 Nov 2026</p>
+      <p class="prog-theme">Liberación de Tensión</p>
+      <p class="prog-desc">Masetero, trapecio y un cuerpo fluido para proyectar</p>
     </div>
   </div>
 </section>
@@ -1049,13 +1070,83 @@
     </div>
   </div>
 
+  <!-- SESSION VI -->
+  <div class="session-block">
+    <div class="session-header">
+      <div class="session-roman vi">VI</div>
+      <div class="session-meta">
+        <h2>Teatro VI — Liberación de Tensión</h2>
+        <p>14 de Noviembre, 2026 · Última sesión: ejercicios de liberación de tensión general</p>
+      </div>
+    </div>
+
+    <div class="cards-grid">
+
+      <div class="card gold">
+        <span class="card-icon">🌅</span>
+        <div class="card-title">Sesión 6 · Cierre</div>
+        <div class="card-body">
+          <ul>
+            <li>Última sesión, centrada en <strong>ejercicios de liberación de tensión</strong></li>
+            <li>Al salir de clase, la voz quedó <strong>más liberada, más vibrante y con más potencia</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card orange">
+        <span class="card-icon">😬</span>
+        <div class="card-title">El Masetero y la Mandíbula</div>
+        <div class="card-body">
+          <ul>
+            <li>El <strong>masetero</strong> está en la zona que conecta la mandíbula con la oreja</li>
+            <li>El <strong>bruxismo</strong> puede indicar tensión o ira acumulada</li>
+            <li>Una mandíbula tensa <strong>bloquea la proyección del sonido</strong></li>
+            <li>Como un terremoto: <strong>sin flexibilidad, la energía se rompe</strong> en vez de proyectarse</li>
+            <li>Técnica: coger el moflete por la parte de atrás (entre oreja y moflete); <strong>duele un poco</strong>, pero libera los puntos de tensión clave</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card green">
+        <span class="card-icon">🦋</span>
+        <div class="card-title">Trapecio y Diafragma</div>
+        <div class="card-body">
+          <ul>
+            <li>El <strong>trapecio</strong> va desde el cuello hasta los dos huesos de la espalda, como si saliesen alas</li>
+            <li>Objetivo: <strong>mantenerlo relajado</strong></li>
+            <li>Pose <strong>“Superwoman”</strong> con el sonido <strong>“CH”</strong> para activar y sentir el diafragma</li>
+            <li>Relajar el <strong>TSS</strong> en esa postura</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card blue">
+        <span class="card-icon">🌊</span>
+        <div class="card-title">Curiosidades sobre Proyección</div>
+        <div class="card-body">
+          <ul>
+            <li>En los teatros antiguos había <strong>agua entre el escenario y el público</strong> para mejorar la proyección</li>
+            <li>La <strong>madera conduce mejor el sonido</strong>, por eso se usa mucho en los teatros</li>
+            <li>Principio clave: <strong>“be like water”</strong> (o madera) — un cuerpo fluido, no rígido</li>
+            <li>Proyectar la voz <strong>como si el espacio fuese muy largo</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="highlight-card">
+        💡 <strong>Gran insight de Teatro VI:</strong> "Un cuerpo tenso rompe el sonido, como un edificio rígido en un terremoto. Libera el masetero y el trapecio, sé como el agua — o como la madera, que conduce el sonido — y proyecta como si la sala fuese muy larga. Al salir: voz más liberada, más vibrante y con más potencia."
+      </div>
+
+    </div>
+  </div>
+
 </section>
 
 <!-- KEY INSIGHTS -->
 <section class="insights-section">
   <div class="insights-inner">
     <p class="section-label">Lo que más importa</p>
-    <h2 class="section-title">10 Aprendizajes Clave</h2>
+    <h2 class="section-title">11 Aprendizajes Clave</h2>
 
     <div class="insights-grid">
 
@@ -1129,6 +1220,13 @@
         <div class="insight-text">La potencia se pierde al final de la frase cuando no hay aire. Mini sorbitos entre frases, tono modulado y la voz proyectada siempre hacia la última persona de la sala.</div>
       </div>
 
+      <div class="insight-item">
+        <span class="insight-number">11</span>
+        <span class="insight-emoji">🌊</span>
+        <div class="insight-title">Sé como el agua</div>
+        <div class="insight-text">Un cuerpo tenso rompe la onda sonora. Libera el masetero (entre oreja y moflete) y el trapecio, sé fluido como el agua o como la madera que conduce el sonido, y proyecta como si el espacio fuese muy largo.</div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -1160,7 +1258,7 @@
       <div class="skill-row">
         <div class="skill-label">
           <span class="skill-name">Relajación Muscular</span>
-          <span class="skill-pct">70%</span>
+          <span class="skill-pct">80%</span>
         </div>
         <div class="bar-track"><div class="bar-fill v3"></div></div>
       </div>
@@ -1176,7 +1274,7 @@
       <div class="skill-row">
         <div class="skill-label">
           <span class="skill-name">Proyección & Presencia</span>
-          <span class="skill-pct">75%</span>
+          <span class="skill-pct">85%</span>
         </div>
         <div class="bar-track"><div class="bar-fill v5"></div></div>
       </div>
@@ -1217,12 +1315,17 @@
         <div class="legend-focus">Preparación antes de hablar</div>
         <div class="legend-note">Ritual de 5 pasos: relajación, respiración, diafragma, resonancia y articulación; respirar entre frases y modular el tono</div>
       </div>
+      <div class="legend-item">
+        <div class="legend-session vi">Teatro VI · 14 Nov</div>
+        <div class="legend-focus">Liberación de tensión</div>
+        <div class="legend-note">Masetero y trapecio relajados, pose Superwoman con “CH”, cuerpo fluido (“be like water”) y proyección como si el espacio fuese muy largo</div>
+      </div>
     </div>
   </div>
 </section>
 
 <footer>
-  Generado desde tus notas de Granola · <span>Teatro I, II, III, IV & V</span> · Joaquin Wu Lin
+  Generado desde tus notas de Granola · <span>Teatro I, II, III, IV, V & VI</span> · Joaquin Wu Lin
 </footer>
 
 <script>
