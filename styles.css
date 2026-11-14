@@ -737,3 +737,162 @@
       .now-grid { grid-template-columns: 1fr; }
     }
 
+    /* ── SESSION PICKER GRID ── */
+    .pick-section {
+      padding: 12px 24px 80px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .session-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    a.session-pick {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 28px 24px 24px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.2s, border-color 0.2s;
+      min-height: 200px;
+    }
+    a.session-pick:hover,
+    a.session-pick:focus-visible {
+      transform: translateY(-3px);
+      border-color: rgba(255,255,255,0.16);
+      outline: none;
+    }
+
+    a.session-pick::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+    }
+    a.session-pick.i::before { background: linear-gradient(90deg, var(--accent1), transparent); }
+    a.session-pick.ii::before { background: linear-gradient(90deg, var(--accent2), transparent); }
+    a.session-pick.iii::before { background: linear-gradient(90deg, var(--accent3), transparent); }
+    a.session-pick.iv::before { background: linear-gradient(90deg, var(--accent4), transparent); }
+    a.session-pick.v::before { background: linear-gradient(90deg, var(--accent5), transparent); }
+    a.session-pick.vi::before { background: linear-gradient(90deg, var(--accent6), transparent); }
+
+    .pick-roman {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+    a.session-pick.i .pick-roman { color: var(--accent1); }
+    a.session-pick.ii .pick-roman { color: var(--accent2); }
+    a.session-pick.iii .pick-roman { color: var(--accent3); }
+    a.session-pick.iv .pick-roman { color: var(--accent4); }
+    a.session-pick.v .pick-roman { color: var(--accent5); }
+    a.session-pick.vi .pick-roman { color: var(--accent6); }
+
+    .pick-date {
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .pick-theme {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .pick-desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-top: auto;
+    }
+
+    .pick-go {
+      margin-top: 16px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--muted);
+    }
+    a.session-pick:hover .pick-go { color: var(--text); }
+
+    /* ── SESSION DETAIL ── */
+    .detail-page {
+      padding: 48px 24px 80px;
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .detail-page .session-block { margin-bottom: 48px; }
+
+    .session-pager {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 8px;
+    }
+
+    .pager-link {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      padding: 20px 22px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    a.pager-link:hover,
+    a.pager-link:focus-visible {
+      transform: translateY(-2px);
+      border-color: rgba(255,255,255,0.16);
+      outline: none;
+    }
+    .pager-link.next { text-align: right; }
+    .pager-link.disabled {
+      opacity: 0.35;
+      pointer-events: none;
+    }
+
+    .pager-dir {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .pager-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    @media (max-width: 900px) {
+      .session-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 640px) {
+      .session-grid { grid-template-columns: 1fr; }
+      .session-pager { grid-template-columns: 1fr; }
+      .pager-link.next { text-align: left; }
+    }

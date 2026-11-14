@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teatro VI — Liberación de Tensión</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="spotlight" id="spotlight"></div>
+
+<section class="detail-page">
+  <a class="page-nav" href="sesiones.html">← Todas las sesiones</a>
+  <div class="session-block">
+    <div class="session-header">
+      <div class="session-roman vi">VI</div>
+      <div class="session-meta">
+        <h2>Teatro VI — Liberación de Tensión</h2>
+        <p>14 de Noviembre, 2026 · Última sesión: ejercicios de liberación de tensión general</p>
+      </div>
+    </div>
+
+    <div class="cards-grid">
+
+      <div class="card gold">
+        <span class="card-icon">🌅</span>
+        <div class="card-title">Sesión 6 · Cierre</div>
+        <div class="card-body">
+          <ul>
+            <li>Última sesión, centrada en <strong>ejercicios de liberación de tensión</strong></li>
+            <li>Al salir de clase, la voz quedó <strong>más liberada, más vibrante y con más potencia</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card orange">
+        <span class="card-icon">😬</span>
+        <div class="card-title">El Masetero y la Mandíbula</div>
+        <div class="card-body">
+          <ul>
+            <li>El <strong>masetero</strong> está en la zona que conecta la mandíbula con la oreja</li>
+            <li>El <strong>bruxismo</strong> puede indicar tensión o ira acumulada</li>
+            <li>Una mandíbula tensa <strong>bloquea la proyección del sonido</strong></li>
+            <li>Como un terremoto: <strong>sin flexibilidad, la energía se rompe</strong> en vez de proyectarse</li>
+            <li>Técnica: coger el moflete por la parte de atrás (entre oreja y moflete); <strong>duele un poco</strong>, pero libera los puntos de tensión clave</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card green">
+        <span class="card-icon">🦋</span>
+        <div class="card-title">Trapecio y Diafragma</div>
+        <div class="card-body">
+          <ul>
+            <li>El <strong>trapecio</strong> va desde el cuello hasta los dos huesos de la espalda, como si saliesen alas</li>
+            <li>Objetivo: <strong>mantenerlo relajado</strong></li>
+            <li>Pose <strong>“Superwoman”</strong> con el sonido <strong>“CH”</strong> para activar y sentir el diafragma</li>
+            <li>Relajar el <strong>TSS</strong> en esa postura</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card blue">
+        <span class="card-icon">🌊</span>
+        <div class="card-title">Curiosidades sobre Proyección</div>
+        <div class="card-body">
+          <ul>
+            <li>En los teatros antiguos había <strong>agua entre el escenario y el público</strong> para mejorar la proyección</li>
+            <li>La <strong>madera conduce mejor el sonido</strong>, por eso se usa mucho en los teatros</li>
+            <li>Principio clave: <strong>“be like water”</strong> (o madera) — un cuerpo fluido, no rígido</li>
+            <li>Proyectar la voz <strong>como si el espacio fuese muy largo</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="highlight-card">
+        💡 <strong>Gran insight de Teatro VI:</strong> "Un cuerpo tenso rompe el sonido, como un edificio rígido en un terremoto. Libera el masetero y el trapecio, sé como el agua — o como la madera, que conduce el sonido — y proyecta como si la sala fuese muy larga. Al salir: voz más liberada, más vibrante y con más potencia."
+      </div>
+
+    </div>
+  </div>
+
+  <nav class="session-pager">
+    <a class="pager-link prev" href="sesion-5.html">
+      <span class="pager-dir">← Anterior</span>
+      <span class="pager-title">Teatro V — Preparación & Proyección</span>
+    </a>
+    <span class="pager-link next disabled">
+      <span class="pager-dir">Siguiente →</span>
+      <span class="pager-title">Esta es la última sesión</span>
+    </span>
+  </nav>
+</section>
+
+<footer>
+  Generado desde tus notas de Granola · <span>Teatro I, II, III, IV, V & VI</span> · Joaquin Wu Lin
+</footer>
+
+<script>
+  const spotlight = document.getElementById('spotlight');
+  document.addEventListener('mousemove', e => {
+    spotlight.style.setProperty('--mx', e.clientX + 'px');
+    spotlight.style.setProperty('--my', e.clientY + 'px');
+  });
+</script>
+</body>
+</html>
