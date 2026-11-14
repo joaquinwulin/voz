@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teatro III — Tempo & Proyección</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="spotlight" id="spotlight"></div>
+
+<section class="detail-page">
+  <a class="page-nav" href="sesiones.html">← Todas las sesiones</a>
+  <div class="session-block">
+    <div class="session-header">
+      <div class="session-roman iii">III</div>
+      <div class="session-meta">
+        <h2>Teatro III — Tempo & Proyección</h2>
+        <p>21 de Marzo, 2026 · Ritmo, musculatura y presencia avanzada</p>
+      </div>
+    </div>
+
+    <div class="cards-grid">
+
+      <div class="card orange">
+        <span class="card-icon">⏱️</span>
+        <div class="card-title">Maestría del Tempo y Pausas</div>
+        <div class="card-body">
+          <ul>
+            <li>Velocidades practicadas: <strong>lento, normal, rápido</strong></li>
+            <li>Clave: <strong>terminar frases lentamente</strong> para crear pausas conscientes</li>
+            <li>Beneficio: tiempo para pensar la siguiente frase sin quedarse trabado</li>
+            <li>Mejora notable: ya no "comes" palabras ni hablas corriendo</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card orange">
+        <span class="card-icon">💪</span>
+        <div class="card-title">Ejercicio del Lápiz</div>
+        <div class="card-body">
+          <ul>
+            <li>Entrenamiento de <strong>resistencia muscular</strong> para la mandíbula</li>
+            <li>Fortalece el músculo <strong>masetero</strong> (bajo la mandíbula)</li>
+            <li>Principio: como poner pesas en los tobillos al correr</li>
+            <li>Al quitar la resistencia → el músculo está <strong>notablemente más fuerte</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card purple">
+        <span class="card-icon">🎯</span>
+        <div class="card-title">Proyección Avanzada</div>
+        <div class="card-body">
+          <ul>
+            <li>Mirar un <strong>punto fijo externo</strong> mientras hablas</li>
+            <li>Visualizar que las palabras <strong>se amplifican hasta el destino</strong></li>
+            <li>Gesticulación exagerada de la boca para máxima claridad</li>
+            <li>Tensión muscular impide la propagación de ondas sonoras</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card green">
+        <span class="card-icon">📡</span>
+        <div class="card-title">Empatía y Escucha Activa</div>
+        <div class="card-body">
+          <ul>
+            <li>Videos iniciales del taller: <strong>empatía y escucha activa</strong></li>
+            <li>Historia del metro: simple, relatable, con elementos visuales</li>
+            <li>Silencios cada vez mejor manejados por el grupo</li>
+            <li>Relajación muscular = clave para proyección efectiva</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="highlight-card">
+        💡 <strong>Gran insight de Teatro III:</strong> "Me siento con buena progresión y confianza creciente. La comunicación es mucho más clara cuando me tomo las pausas necesarias — y el lenguaje coloquial frecuente es mi próxima área de mejora."
+      </div>
+
+    </div>
+  </div>
+
+  <nav class="session-pager">
+    <a class="pager-link prev" href="sesion-2.html">
+      <span class="pager-dir">← Anterior</span>
+      <span class="pager-title">Teatro II — Control & Estructura</span>
+    </a>
+    <a class="pager-link next" href="sesion-4.html">
+      <span class="pager-dir">Siguiente →</span>
+      <span class="pager-title">Teatro IV — Diafragma & Cuerdas</span>
+    </a>
+  </nav>
+</section>
+
+<footer>
+  Generado desde tus notas de Granola · <span>Teatro I, II, III, IV, V & VI</span> · Joaquin Wu Lin
+</footer>
+
+<script>
+  const spotlight = document.getElementById('spotlight');
+  document.addEventListener('mousemove', e => {
+    spotlight.style.setProperty('--mx', e.clientX + 'px');
+    spotlight.style.setProperty('--my', e.clientY + 'px');
+  });
+</script>
+</body>
+</html>

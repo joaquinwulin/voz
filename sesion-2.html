@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teatro II — Control & Estructura</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="spotlight" id="spotlight"></div>
+
+<section class="detail-page">
+  <a class="page-nav" href="sesiones.html">← Todas las sesiones</a>
+  <div class="session-block">
+    <div class="session-header">
+      <div class="session-roman ii">II</div>
+      <div class="session-meta">
+        <h2>Teatro II — Control & Estructura</h2>
+        <p>7 de Marzo, 2026 · Calentamiento, volumen y narración</p>
+      </div>
+    </div>
+
+    <div class="cards-grid">
+
+      <div class="card pink">
+        <span class="card-icon">🎙️</span>
+        <div class="card-title">Calentamiento Vocal</div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Sonidos "Ph, CH"</strong> para preparar las cuerdas vocales</li>
+            <li>Ejercicio de <strong>estómago</strong>: apretar como si quisieras sacar a alguien</li>
+            <li>Técnica <strong>"saborear la comida"</strong> para posicionar la boca correctamente</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card pink">
+        <span class="card-icon">🔊</span>
+        <div class="card-title">Sistema de Volumen (4 niveles)</div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Nivel 1:</strong> Vocalización extrema — suave pero perfectamente inteligible</li>
+            <li><strong>Nivel 2:</strong> Conversacional, tu baseline actual (1.7 → sube a 2)</li>
+            <li><strong>Nivel 4:</strong> "Pintar con la boca al 100%" — cada letra llega al fondo</li>
+            <li>⚠️ Nunca saltar directo de bajo a alto — pasar siempre por el nivel medio</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card purple">
+        <span class="card-icon">🫁</span>
+        <div class="card-title">Cuerpo y Respiración</div>
+        <div class="card-body">
+          <ul>
+            <li>Tensión en brazos <strong>desapareciendo progresivamente</strong> ✓</li>
+            <li>La <strong>"pelota"</strong> bajo el esternón — fuerza excesiva bloquea el aire</li>
+            <li>Concepto <strong>"Let it go"</strong>: relajar para lograr tono fuerte y volumen</li>
+            <li>Cuello: área de trabajo pendiente</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card green">
+        <span class="card-icon">📖</span>
+        <div class="card-title">Storytelling con Pausas</div>
+        <div class="card-body">
+          <ul>
+            <li>Setups simples hacen que el <strong>público se imagine la historia</strong></li>
+            <li>Dos "hooks" de contexto valen más que enfocarse en el volumen</li>
+            <li>Pausas = herramienta de <strong>transición poderosa</strong></li>
+            <li>Cambiar tono después de pausa → historia mucho más impactante</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="highlight-card">
+        💡 <strong>Gran insight de Teatro II:</strong> "Con un setup sencillo puedo hacer que la gente se imagine historias efectivamente. Un par de <em>hooks</em> de contexto facilitan mucho más contar historias que solo enfocarse en el volumen."
+      </div>
+
+    </div>
+  </div>
+
+  <nav class="session-pager">
+    <a class="pager-link prev" href="sesion-1.html">
+      <span class="pager-dir">← Anterior</span>
+      <span class="pager-title">Teatro I — Cuerpo & Voz</span>
+    </a>
+    <a class="pager-link next" href="sesion-3.html">
+      <span class="pager-dir">Siguiente →</span>
+      <span class="pager-title">Teatro III — Tempo & Proyección</span>
+    </a>
+  </nav>
+</section>
+
+<footer>
+  Generado desde tus notas de Granola · <span>Teatro I, II, III, IV, V & VI</span> · Joaquin Wu Lin
+</footer>
+
+<script>
+  const spotlight = document.getElementById('spotlight');
+  document.addEventListener('mousemove', e => {
+    spotlight.style.setProperty('--mx', e.clientX + 'px');
+    spotlight.style.setProperty('--my', e.clientY + 'px');
+  });
+</script>
+</body>
+</html>
