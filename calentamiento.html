@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0e0e12">
+  <title>Teatro — Calentamiento de 2 min</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap">
+  <link rel="stylesheet" href="styles.css?v=dca54229">
+  <style>
+    .wu {
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+      padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px));
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    .wu .hero-sub { margin-bottom: 28px; max-width: none; }
+    .wu-progress {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+    .wu-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 28px;
+    }
+    .wu-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+    }
+    .wu-dot.done {
+      background: var(--accent4);
+      border-color: rgba(52,211,153,0.5);
+    }
+    .wu-dot.current {
+      background: var(--accent6);
+      border-color: rgba(251,191,36,0.6);
+      transform: scale(1.25);
+    }
+    .wu-timer {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: clamp(5rem, 26vw, 7.5rem);
+      line-height: 0.9;
+      letter-spacing: -2px;
+      background: linear-gradient(135deg, #fff 0%, var(--accent1) 50%, var(--accent6) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin: 8px 0 24px;
+      user-select: none;
+      font-variant-numeric: tabular-nums;
+    }
+    .wu-bar {
+      width: 100%;
+      height: 4px;
+      background: var(--surface2);
+      border-radius: 999px;
+      overflow: hidden;
+      margin: 0 0 32px;
+    }
+    .wu-bar > span {
+      display: block;
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--accent1), var(--accent6));
+      border-radius: inherit;
+    }
+    .wu-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 6vw, 2rem);
+      font-weight: 700;
+      line-height: 1.25;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+    .wu-text {
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--muted);
+      margin: 0 auto 36px;
+      max-width: 400px;
+    }
+    .wu-controls {
+      display: flex;
+      gap: 12px;
+    }
+    .wu-btn {
+      flex: 1;
+      min-height: 56px;
+      padding: 14px 20px;
+      border-radius: 999px;
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      cursor: pointer;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .wu-btn.primary {
+      background: linear-gradient(135deg, rgba(192,132,252,0.28), rgba(244,114,182,0.18));
+      border-color: rgba(192,132,252,0.5);
+    }
+    .wu-btn:active { transform: scale(0.98); }
+    .wu-btn:disabled { opacity: 0.4; pointer-events: none; }
+    .wu-source {
+      margin-top: 36px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .wu.is-done .wu-timer { font-size: clamp(2.4rem, 10vw, 3.2rem); letter-spacing: 0; }
+    @media (min-width: 640px) {
+      .wu-btn { min-height: 58px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="spotlight" id="spotlight"></div>
+
+<section class="wu" id="warmup">
+  <a class="page-nav" href="index.html">← Inicio</a>
+  <p class="hero-label">Antes de hablar</p>
+  <h1>Calentamiento</h1>
+  <p class="hero-sub">2 minutos, con los ejercicios de tus sesiones.</p>
+
+  <p class="wu-progress">Paso <span id="stepNum">1</span> de <span id="stepTotal">7</span></p>
+  <div class="wu-dots" id="dots" aria-hidden="true"></div>
+
+  <div class="wu-timer" id="timer" aria-live="polite">0:20</div>
+  <div class="wu-bar" aria-hidden="true"><span id="bar"></span></div>
+  <h2 class="wu-title" id="stepTitle"></h2>
+  <p class="wu-text" id="stepText"></p>
+
+  <div class="wu-controls">
+    <button class="wu-btn primary" id="btnStart" type="button">Empezar</button>
+    <button class="wu-btn" id="btnReset" type="button">Reiniciar</button>
+  </div>
+  <p class="wu-source">Según las sesiones I, IV, V y VI.</p>
+</section>
+
+<footer>
+  Generado desde tus notas de Granola · <span>Teatro I, II, III, IV, V &amp; VI</span> · Joaquin Wu Lin
+</footer>
+
+<script>
+  const STEPS = [
+    {
+      name: 'Mandíbula y masetero',
+      text: 'Coge el moflete por detrás, entre oreja y mejilla, y abre la mandíbula al máximo sin tensión.',
+      seconds: 20
+    },
+    {
+      name: 'Relaja el trapecio',
+      text: 'Sube el brazo y déjalo caer sin tensión. Enfócate solo en subirlo; debe caer solo.',
+      seconds: 15
+    },
+    {
+      name: 'Respiración',
+      text: 'Respira por la boca: es más eficiente que por la nariz. El aire es la “gasolina” que proyecta el mensaje; coge mini sorbitos.',
+      seconds: 15
+    },
+    {
+      name: 'Diafragma: pose Superwoman',
+      text: 'Ponte en pose Superwoman y haz el sonido “CH” (y “TS”) para activar y sentir el diafragma. Si solo haces uno, este.',
+      seconds: 25
+    },
+    {
+      name: 'Resonancia',
+      text: 'Rumia como si saborearas algo y haz el sonido “OM” para sentir el retumbe en la caja torácica. Deja la lengua relajada.',
+      seconds: 15
+    },
+    {
+      name: 'Articulación',
+      text: 'Mastica exageradamente como “degustando algo”. Sopla haciendo “BR” para que los labios queden sueltos y activos.',
+      seconds: 15
+    },
+    {
+      name: 'Proyección',
+      text: 'Proyecta la voz como si el espacio fuese muy largo, hacia la última persona de la sala. Cuerpo fluido, “be like water”.',
+      seconds: 15
+    }
+  ];
+
+  const els = {
+    wrap: document.getElementById('warmup'),
+    stepNum: document.getElementById('stepNum'),
+    stepTotal: document.getElementById('stepTotal'),
+    dots: document.getElementById('dots'),
+    timer: document.getElementById('timer'),
+    bar: document.getElementById('bar'),
+    title: document.getElementById('stepTitle'),
+    text: document.getElementById('stepText'),
+    start: document.getElementById('btnStart'),
+    reset: document.getElementById('btnReset')
+  };
+
+  els.stepTotal.textContent = String(STEPS.length);
+
+  let index = 0;
+  let remaining = STEPS[0].seconds;
+  let running = false;
+  let raf = 0;
+  let lastTs = 0;
+  let audioCtx = null;
+  let wakeLock = null;
+
+  function format(sec) {
+    const s = Math.max(0, Math.ceil(sec));
+    const m = Math.floor(s / 60);
+    const r = s % 60;
+    return m + ':' + String(r).padStart(2, '0');
+  }
+
+  function render(done) {
+    const step = STEPS[index];
+    els.stepNum.textContent = String(index + 1);
+    els.title.textContent = done ? 'Calentamiento terminado' : step.name;
+    els.text.textContent = done
+      ? 'Si te queda una cosa: mantén el diafragma activo y respira entre frases para llegar con fuerza hasta la última fila.'
+      : step.text;
+    els.timer.textContent = done ? 'Listo' : format(remaining);
+    els.wrap.classList.toggle('is-done', !!done);
+    els.start.textContent = running ? 'Pausar' : (index === 0 && remaining === STEPS[0].seconds ? 'Empezar' : (done ? 'Otra vez' : 'Seguir'));
+    els.dots.innerHTML = STEPS.map((_, i) => {
+      const cls = done || i < index ? 'done' : (i === index ? 'current' : '');
+      return '<span class="wu-dot ' + cls + '"></span>';
+    }).join('');
+    const total = STEPS.reduce((a, s) => a + s.seconds, 0);
+    const elapsed = STEPS.slice(0, index).reduce((a, s) => a + s.seconds, 0) + (done ? step.seconds : (step.seconds - remaining));
+    els.bar.style.width = Math.min(100, (elapsed / total) * 100) + '%';
+  }
+
+  function cue(final) {
+    if (navigator.vibrate) {
+      try { navigator.vibrate(final ? [160, 80, 200] : 180); } catch (e) {}
+    }
+    try {
+      if (!audioCtx) return;
+      if (audioCtx.state === 'suspended') audioCtx.resume();
+      const now = audioCtx.currentTime;
+      const beep = (freq, start, dur, vol) => {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq, now + start);
+        gain.gain.setValueAtTime(0.0001, now + start);
+        gain.gain.exponentialRampToValueAtTime(vol, now + start + 0.02);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + start + dur);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start(now + start);
+        osc.stop(now + start + dur + 0.02);
+      };
+      if (final) {
+        beep(392, 0, 0.18, 0.07);
+        beep(523.25, 0.2, 0.28, 0.08);
+      } else {
+        beep(523.25, 0, 0.22, 0.07);
+      }
+    } catch (e) {}
+  }
+
+  async function lockScreen() {
+    try {
+      if ('wakeLock' in navigator) {
+        wakeLock = await navigator.wakeLock.request('screen');
+      }
+    } catch (e) { wakeLock = null; }
+  }
+
+  async function unlockScreen() {
+    try { if (wakeLock) await wakeLock.release(); } catch (e) {}
+    wakeLock = null;
+  }
+
+  function ensureAudio() {
+    if (!audioCtx) {
+      const Ctx = window.AudioContext || window.webkitAudioContext;
+      if (Ctx) audioCtx = new Ctx();
+    }
+    if (audioCtx && audioCtx.state === 'suspended') audioCtx.resume();
+  }
+
+  function tick(ts) {
+    if (!running) return;
+    if (!lastTs) lastTs = ts;
+    const dt = Math.min(0.1, (ts - lastTs) / 1000);
+    lastTs = ts;
+    remaining -= dt;
+    if (remaining <= 0) {
+      if (index < STEPS.length - 1) {
+        index += 1;
+        remaining = STEPS[index].seconds;
+        cue(false);
+        render(false);
+      } else {
+        remaining = 0;
+        running = false;
+        unlockScreen();
+        cue(true);
+        render(true);
+        return;
+      }
+    } else {
+      render(false);
+    }
+    raf = requestAnimationFrame(tick);
+  }
+
+  function play() {
+    if (els.wrap.classList.contains('is-done')) {
+      index = 0;
+      remaining = STEPS[0].seconds;
+    }
+    ensureAudio();
+    running = true;
+    lastTs = 0;
+    lockScreen();
+    render(false);
+    raf = requestAnimationFrame(tick);
+  }
+
+  function pause() {
+    running = false;
+    if (raf) cancelAnimationFrame(raf);
+    lastTs = 0;
+    unlockScreen();
+    render(false);
+  }
+
+  function reset() {
+    running = false;
+    if (raf) cancelAnimationFrame(raf);
+    lastTs = 0;
+    index = 0;
+    remaining = STEPS[0].seconds;
+    unlockScreen();
+    render(false);
+  }
+
+  els.start.addEventListener('click', () => {
+    if (running) pause();
+    else play();
+  });
+  els.reset.addEventListener('click', reset);
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible' && running) lockScreen();
+  });
+
+  const spotlight = document.getElementById('spotlight');
+  document.addEventListener('mousemove', e => {
+    spotlight.style.setProperty('--mx', e.clientX + 'px');
+    spotlight.style.setProperty('--my', e.clientY + 'px');
+  });
+
+  render(false);
+</script>
+</body>
+</html>
